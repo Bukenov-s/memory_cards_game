@@ -1,33 +1,51 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.cell {
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.table {
+  width: 320px;
+  height: 320px;
+  margin: 3rem auto;
 }
 
-.App-link {
-  color: #61dafb;
+.diamond {
+  background: url('./assets/diamond.svg');
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.eye {
+  background: url('./assets/eye.svg');
+}
+
+.hand {
+  background: url('./assets/hand.svg');
+}
+
+.home {
+  background: url('./assets/home.svg');
+}
+
+.magnet {
+  background: url('./assets/magnet.svg');
+}
+
+.speaker {
+  background: url('./assets/speaker.svg');
+}
+
+.speed {
+  background: url('./assets/speed.svg');
+}
+
+.unlocked {
+  background: url('./assets/unlocked.svg');
 }
