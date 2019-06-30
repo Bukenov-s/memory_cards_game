@@ -2,6 +2,9 @@ import { combineReducers } from 'redux';
 import * as TYPES from './constants';
 import { IState } from './types';
 
+// .sort( () => Math.random() - 0.5);
+
+
 const initialState: IState = {
   cardsList: [
     {
@@ -84,7 +87,7 @@ const initialState: IState = {
       value: 'unlocked',
       open: false
     }
-  ],
+  ].sort(() => Math.random() - 0.5),
   openCards: [],
   gameOver: false
 };
