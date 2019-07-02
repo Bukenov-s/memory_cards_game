@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Cell from '../components/Cell';
+import { Panel } from '../components/Panel';
+import { Cell } from '../components/Cell';
 import * as actionCreators from '../actions';
 
 const mapStateToProps = ({ game }: any) => ({
   cardsList: game.cardsList,
-  openCards: game.openCards
+  openCards: game.openCards,
+  attempts: game.attempts
 });
 
 const mapDispatchToProps = {
@@ -19,23 +21,27 @@ type Props = typeof mapDispatchToProps & ReturnType<typeof mapStateToProps>;
 const Table: React.FunctionComponent<Props> = ({
   cardsList,
   openCards,
+  attempts,
   startGame,
-  stopGame,
   openCard,
 }) => {
   return (
-    <div className="table">
-      {cardsList.map(({ id, value, open }) => (
-        <Cell
-          key={id}
-          id={id}
-          value={value}
-          openCards={openCards}
-          open={open}
-          openCard={openCard}
-        />
-      ))}
+    <div className="container">
+      <Panel attempts={attempts} startGame={startGame} />
+      <div className="table">
+        {cardsList.map(({ id, value, open }) => (
+          <Cell
+            key={id}
+            id={id}
+            value={value}
+            openCards={openCards}
+            open={open}
+            openCard={openCard}
+          />
+        ))}
+      </div>
     </div>
+
   );
 };
 

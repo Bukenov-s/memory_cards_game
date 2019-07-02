@@ -34,4 +34,4 @@ const Cell: React.FunctionComponent<IProps> = ({
   );
 };
 
-export default Cell;
+export { Cell };

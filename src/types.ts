@@ -7,5 +7,5 @@ export interface ICard {
 export type IState = Readonly<{
   cardsList: ICard[],
   openCards: ICard[] | [],
-  gameOver: boolean
+  attempts: number
 }>

@@ -34,6 +34,7 @@ export const closeCard = (card: ICard) => ({
   card
 })
 
-export const clearOpenCards = () => ({
-  type: TYPES.CLEAR_OPEN_CARDS
+export const clearOpenCards = (attempts: number) => ({
+  type: TYPES.CLEAR_OPEN_CARDS,
+  attempts
 });

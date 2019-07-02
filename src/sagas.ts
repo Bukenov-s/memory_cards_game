@@ -3,6 +3,7 @@ import * as TYPES from './constants';
 import * as actionCreators from './actions';
 
 const getOpenCards = state => state.game.openCards;
+const getAttempts = state => state.game.attempts;
 
 function* openCardSaga(action) {
   const openCards = yield select(getOpenCards);
@@ -15,19 +16,20 @@ function* openCardSaga(action) {
 
 function* compareOpenCardsSaga() {
   const openCards = yield select(getOpenCards);
+  const attempts = yield select(getAttempts);
   const [firstOpenCard, secondOpenCard] = openCards;
 
   yield delay(2000);
   if (firstOpenCard.value === secondOpenCard.value) {
     yield put(actionCreators.leaveCardOpen(firstOpenCard));
     yield put(actionCreators.leaveCardOpen(secondOpenCard));
-    yield put(actionCreators.clearOpenCards());
+    yield put(actionCreators.clearOpenCards(attempts));
     return;
   }
 
   yield put(actionCreators.closeCard(firstOpenCard));
   yield put(actionCreators.closeCard(secondOpenCard));
-  yield put(actionCreators.clearOpenCards());
+  yield put(actionCreators.clearOpenCards(attempts));
 }
 
 function* flow() {
