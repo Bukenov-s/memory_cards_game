@@ -28,7 +28,7 @@ const Cell: React.FunctionComponent<IProps> = ({
     <button
       onClick={handleOpenClick}
       className={open ? `${'cell'} ${value}` : 'cell'}
-      disabled={openCards.length === 2}
+      disabled={openCards.length === 2 || open}
     >
     </button>
   );
