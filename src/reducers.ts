@@ -15,7 +15,8 @@ const game = (state = initialState, action) => {
       return {
         ...state,
         cardsList: createCardsList(),
-        openCards: []
+        openCards: [],
+        attempts: 0
       };
     case TYPES.SET_CARD_OPEN:
       return {

@@ -1,3 +1,11 @@
+:root {
+  --white: #F5F5F5;
+  --blue: #002642;
+  --burgundy: #840032;
+  --gold: #E59500;
+  --black: #02040F;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +20,15 @@
 }
 
 .panel {
-  padding: 5px;
+  margin: 5px;
+  border: 3px solid #002642;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1;
 }
 
 .cell {
@@ -21,12 +37,27 @@
   margin: 5px;
   cursor: pointer;
   border: none;
+  background: var(--white);
+  border: 3px solid var(--blue);
 }
 
 .table {
   width: 320px;
   height: 320px;
-  
+}
+
+.start {
+  background: #02040F;
+  border: none;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s transform ease;
+}
+
+.start:active {
+  transform: scale(0.9, 0.9);
 }
 
 .diamond {
