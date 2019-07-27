@@ -1,4 +1,4 @@
-import React, { useCallback, MouseEventHandler } from 'react';
+import React, { FC, useCallback, MouseEventHandler } from 'react';
 import * as actionCreators from '../actions';
 import { ICard } from '../types';
 
@@ -11,7 +11,7 @@ interface IProps {
 }
 
 
-const Cell: React.FunctionComponent<IProps> = ({
+const Cell: FC<IProps> = ({
   id,
   value,
   open,
